@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fun Learning!</title>
+
+    <!-- CSS goes here -->
+    <style>
+        body {
+            background: #f0f8ff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2 {
+            color: #1a237e;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.5;
+            max-width: 700px;
+            margin: 10px auto;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 24px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .box {
+            background-color: #e3f2fd;
+            border: 2px solid #90caf9;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #1a237e;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Fun Learning!</h1>
+    <p>Click the buttons below to learn fun facts or answer a small quiz!</p>
+
+    <div class="box">
+        <h2>Fun Fact</h2>
+        <p id="funFact">Press the button to see a fun fact!</p>
+        <button onclick="showFunFact()">Show Fun Fact</button>
+    </div>
+
+    <div class="box">
+        <h2>Quiz Time!</h2>
+        <p id="quizQuestion">What is 5 + 3?</p>
+        <button onclick="checkAnswer(8)">Answer: 8</button>
+        <button onclick="checkAnswer(7)">Answer: 7</button>
+        <p id="quizResult"></p>
+    </div>
+
+    <footer>
+        Made by Yuva - Keep Learning Every Day!
+    </footer>
+
+    <!-- JavaScript goes here -->
+    <script>
+        const funFacts = [
+            "Honey never spoils!",
+            "A group of flamingos is called a 'flamboyance'.",
+            "Octopuses have three hearts.",
+            "Bananas are berries, but strawberries are not!"
+        ];
+
+        function showFunFact() {
+            const fact = funFacts[Math.floor(Math.random() * funFacts.length)];
+            document.getElementById("funFact").innerText = fact;
+        }
+
+        function checkAnswer(answer) {
+            const result = document.getElementById("quizResult");
+            if(answer === 8) {
+                result.innerText = "Correct! 🎉";
+                result.style.color = "green";
+            } else {
+                result.innerText = "Oops! Try again.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
