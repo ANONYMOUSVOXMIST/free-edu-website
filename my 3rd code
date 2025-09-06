@@ -1,0 +1,25 @@
+// Calculator
+const display = document.getElementById('calc-display');
+
+function addToDisplay(value) {
+  display.value += value;
+}
+
+function clearDisplay() {
+  display.value = '';
+}
+
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = 'Error';
+  }
+}
+
+// Coding Playground
+function runCode() {
+  const code = document.getElementById('code-input').value;
+  const output = document.getElementById('code-output');
+  output.srcdoc = code;
+}
